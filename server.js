@@ -8,7 +8,7 @@ const pg = require('pg')
 server.use(express.json());
 server.use(cors());
 const apKey = process.env.APIkey;
-let PORT = process.env.PORT || 3025;
+let PORT = 3026||process.env.PORT ;
 const axios = require('axios');
 const client = new pg.Client(process.env.DATABASE_URL)
 
@@ -126,10 +126,6 @@ function deletMovie(req, res) {
       res.status(500).send(error);
     })
 }
-
-
-
-
 
 
 server.get('*', (req, res) => {
